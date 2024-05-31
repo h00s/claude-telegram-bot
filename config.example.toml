@@ -1,0 +1,5 @@
+[telegram]
+token = "1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+[anthropic]
+apikey = "sk-ABC123"
