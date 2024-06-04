@@ -9,15 +9,15 @@ import (
 )
 
 type Config struct {
-	Telegram Telegram
-	OpenAI   OpenAI
+	Telegram  Telegram
+	Anthropic Anthropic
 }
 
 type Telegram struct {
 	Token string
 }
 
-type OpenAI struct {
+type Anthropic struct {
 	APIKey string
 }
 
@@ -45,7 +45,7 @@ func (c *Config) loadConfigFromFile(path string) error {
 
 func (c *Config) applyEnvirontmentVariables() {
 	applyEnvirontmentVariable("TELEGRAM_TOKEN", &c.Telegram.Token)
-	applyEnvirontmentVariable("ANTHROPIC_KEY", &c.OpenAI.APIKey)
+	applyEnvirontmentVariable("ANTHROPIC_KEY", &c.Anthropic.APIKey)
 }
 
 func applyEnvirontmentVariable(key string, value interface{}) {
